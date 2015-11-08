@@ -1,0 +1,6 @@
+from django.contrib import admin
+from recetas.models import Proveedor
+from recetas.models import Articulo
+# Register your models here.
+admin.site.register(Proveedor)
+admin.site.register(Articulo)
