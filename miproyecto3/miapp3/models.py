@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.contrib.auth.models import User
 # Create your models here.
 class Proveedor(models.Model):
 	nombre=models.CharField(max_length=50)
@@ -13,8 +13,10 @@ class Articulo(models.Model):
 	('N','Nuevo'),
 	('U','Usado'),
 	)
+	nombre=models.ManyToManyField(Proveedor)
 	nombre=models.CharField(max_length=50)
 	fecha=models.DateField()
 	precio=models.FloatField()
 	tipo=models.CharField(max_length=1, choices=TIPO_CHOICES)
+	user=models.ForeignKey(User, default=1)
 	
