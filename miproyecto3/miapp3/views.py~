@@ -1,7 +1,7 @@
 from django.shortcuts import render #esto ya te viene de serie
 from miapp3.models import Articulo #del models de la aplicacion importa la clase Articulo
-from django.contrib.auth.forms import UserCreationForm,AuthenticationForm #lo importamos para que funcione el registro de usuarios
-from django.contrib.auth import login,logout,authenticate #lo importamos para que funcione el login y el logout
+from django.contrib.auth.forms import UserCreationForm,AuthenticationForm
+from django.contrib.auth import login,logout,authenticate
 from django.http import HttpResponseRedirect #esto sirve para que funcione el return return HttpResponseRedirect("/")
 from miapp3.forms import ArticuloForm
 # Create your views here.

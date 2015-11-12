@@ -15,7 +15,7 @@ class Articulo(models.Model):
 	)
 	nombre=models.ManyToManyField(Proveedor)
 	nombre=models.CharField(max_length=50)
-	fecha=models.DateField()
+	fecha=models.DateTimeField(auto_now=True)
 	precio=models.FloatField()
 	tipo=models.CharField(max_length=1, choices=TIPO_CHOICES)
 	user=models.ForeignKey(User, default=1)

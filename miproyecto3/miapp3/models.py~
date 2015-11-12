@@ -18,5 +18,5 @@ class Articulo(models.Model):
 	fecha=models.DateField()
 	precio=models.FloatField()
 	tipo=models.CharField(max_length=1, choices=TIPO_CHOICES)
-	user=models.ForeignKey(User)
+	user=models.ForeignKey(User, default=1)
 	
