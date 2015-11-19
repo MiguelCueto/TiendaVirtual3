@@ -21,7 +21,8 @@
 		
 		{% if lista_Articulo %}
 			<table border="2">
-				<tr>
+				<th>Todos los articulos</th>
+				<tr>					
 					<td>Nombre</td>
 					<td>Fecha</td>
 					<td>Precio</td>
@@ -41,7 +42,9 @@
 			</table>
 		{% else %}
 			<p>No hay articulos para mostrar</p>			
-		{% endif %}			
+		{% endif %}
+		<a href="{% url 'NuevoUsado' 'U' %}">Solo articulos de segunda mano</a>	
+		<a href="{% url 'NuevoUsado' 'N' %}">Solo articulos nuevos</a>			
 		
 	</body>
 </html>

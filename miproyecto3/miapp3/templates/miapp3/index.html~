@@ -6,7 +6,7 @@
 		<h1>TIENDA VIRTUAL</h1>
 				{% if user.is_authenticated %}
 					<p>Soy {{ user.get_username }}</p>
-					<a href="{% url 'addarticulo' %}">Añadir Articuloq</a>
+					<a href="{% url 'addarticulo' %}">Añadir Articulo</a>
 				{% endif %}
 		<nav>
 			<ul>
@@ -21,7 +21,8 @@
 		
 		{% if lista_Articulo %}
 			<table border="2">
-				<tr>
+				<th>Todos los articulos</th>
+				<tr>					
 					<td>Nombre</td>
 					<td>Fecha</td>
 					<td>Precio</td>
@@ -41,7 +42,9 @@
 			</table>
 		{% else %}
 			<p>No hay articulos para mostrar</p>			
-		{% endif %}			
+		{% endif %}
+		<a href="{% url 'clasificacion(?P<NuevoUsado_id>\w+)' 'U' %}">Solo articulos de segunda mano</a>	
+		<a href="{% url 'clasificacion(?P<NuevoUsado_id>\w+)' 'N' %}">Solo articulos nuevos</a>			
 		
 	</body>
 </html>

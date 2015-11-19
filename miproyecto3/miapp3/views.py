@@ -52,4 +52,9 @@ def addarticulo(request):
 		form = ArticuloForm()
 	return render(request, 'miapp3/addarticulo.html', {'form': form})
 
+def nuevoUsado(request,NuevoUsado_id): #el request siempre va y luego el parametro que me eliege si es nuevo o usado
+	lista_articulos=Articulo.objects.filter(tipo=NuevoUsado_id)	
+	return render(request, 'miapp3/NuevoUsado.html', {'lista_articulos': lista_articulos,'NuevoUsado_id':NuevoUsado_id})
+
+
 
