@@ -15,5 +15,6 @@ urlpatterns = [
 #escribimos clasificacion para diferenciar de las url anteriores
 #NuevoUsado_id es una variable que contendrá un caracter 'U' o 'N' por eso ponemos \w+
 #views.nuevoUsado accedemos a la funcion nuevoUsado de views
-#el nombre de la variable que se usara en el html es 'NuevoUsado'(creo que es el nombre del enlace)	
+#el nombre de la variable que se usara en el html es 'NuevoUsado'(creo que es el nombre del enlace)
+	url(r'^articulo/(?P<Articulo_id>\d+)/$',views.detalle_articulo, name='detalle_articulo'),	
 ]

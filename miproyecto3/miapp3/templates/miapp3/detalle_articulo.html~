@@ -1,0 +1,24 @@
+<html>
+	<head>
+		<title>Tienda Virtual</title>
+	</head>
+	<body>
+		<h1>{{articulo.nombre}}</h1>
+			
+		<ul>
+			{% if var_provee.nombre %}
+				{% for var_provee in articulo.nombre_proveedor.all %}
+					
+					<li>{{ var_provee.nombre }}</li>
+				{% endfor %}
+			{% else %}
+				<li><p>No hay proveedor</p></li>
+			{% endif %}
+		</ul>
+		
+			
+		
+		<p>{{ articulo.fecha|date:"D d M Y - H:i" }}</p>
+		<a href="{% url 'indice' %}">Volver</a>			
+	</body>
+</html>

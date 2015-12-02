@@ -28,14 +28,16 @@
 					<td>Precio</td>
 					<td>Tipo</td>
 					<td>Usuario</td>
+					
 				</tr>	<!--a continuacion un for que recorre lista_Articulo-->
 				{% for articulo in lista_Articulo %}
 				<tr>
-					<td>{{ articulo.nombre }}</td>
+					<td><a href="{% url 'detalle_articulo' articulo.id %}">{{ articulo.nombre }}</a></td>
 					<td>{{ articulo.fecha }}</td>
 					<td>{{ articulo.precio }}</td>
 					<td>{{ articulo.tipo }}</td>
 					<td>{{ articulo.user }}</td>
+					
 					
 				</tr>
 				{% endfor %}
@@ -44,7 +46,8 @@
 			<p>No hay articulos para mostrar</p>			
 		{% endif %}
 		<a href="{% url 'NuevoUsado' 'U' %}">Solo articulos de segunda mano</a>	
-		<a href="{% url 'NuevoUsado' 'N' %}">Solo articulos nuevos</a>			
+		<a href="{% url 'NuevoUsado' 'N' %}">Solo articulos nuevos</a>
+					
 		
 	</body>
 </html>

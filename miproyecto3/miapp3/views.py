@@ -1,4 +1,4 @@
-from django.shortcuts import render #esto ya te viene de serie
+from django.shortcuts import get_object_or_404,render #esto ya te viene de serie (lo de render)#lo unico que para que fucnione la view detalle_articulo añades get_object_or_404
 from miapp3.models import Articulo #del models de la aplicacion importa la clase Articulo
 from django.contrib.auth.forms import UserCreationForm,AuthenticationForm #lo importamos para que funcione el registro de usuarios
 from django.contrib.auth import login,logout,authenticate #lo importamos para que funcione el login y el logout
@@ -55,6 +55,11 @@ def addarticulo(request):
 def nuevoUsado(request,NuevoUsado_id): #el request siempre va y luego el parametro que me eliege si es nuevo o usado
 	lista_articulos=Articulo.objects.filter(tipo=NuevoUsado_id)	
 	return render(request, 'miapp3/NuevoUsado.html', {'lista_articulos': lista_articulos,'NuevoUsado_id':NuevoUsado_id})
+
+def detalle_articulo(request,Articulo_id):
+	articulo = get_object_or_404(Articulo, pk = Articulo_id)
+	return render(request, 'miapp3/detalle_articulo.html', {'articulo': articulo })
+
 
 
 

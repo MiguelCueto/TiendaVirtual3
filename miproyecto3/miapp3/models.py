@@ -5,15 +5,16 @@ class Proveedor(models.Model):
 	nombre=models.CharField(max_length=50)
 	direccion=models.CharField(max_length=50)
 	telefono=models.IntegerField()
-	nombre_articulo=models.CharField(max_length=50)
-	precio=models.FloatField()
+	
+	def __str__(self):
+		return '%s' % (self.nombre)
 
 class Articulo(models.Model):
 	TIPO_CHOICES=(
 	('N','Nuevo'),
 	('U','Usado'),
 	)
-	nombre=models.ManyToManyField(Proveedor)
+	nombre_proveedor=models.ManyToManyField(Proveedor)
 	nombre=models.CharField(max_length=50)
 	fecha=models.DateTimeField(auto_now=True)
 	precio=models.FloatField()

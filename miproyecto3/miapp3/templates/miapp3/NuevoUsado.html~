@@ -3,7 +3,7 @@
 		<title>Articulo Usado</title>
 	</head>
 	<body>
-		{% if NuevoUsado_id=='U' %}		
+		{% if NuevoUsado_id == 'U' %}		
 			<h1>Articulo Usado</h1>
 		{% else %}
 			<h1>Articulo Nuevo</h1>
@@ -22,6 +22,7 @@
 					<td>Precio</td>
 					<td>Tipo</td>
 					<td>Usuario</td>
+					<td>Nombre del Proveedor</td>
 				</tr>	<!--a continuacion un for que recorre lista_Articulo-->
 				{% for articulo in lista_articulos %}
 				<tr>
@@ -30,6 +31,7 @@
 					<td>{{ articulo.precio }}</td>
 					<td>{{ articulo.tipo }}</td>
 					<td>{{ articulo.user }}</td>
+					<td>{{ articulo.nombre_proveedor }}</td>
 					
 				</tr>
 				{% endfor %}
