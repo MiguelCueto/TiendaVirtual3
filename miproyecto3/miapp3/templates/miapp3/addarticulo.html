@@ -1,10 +1,12 @@
+{% load staticfiles %}
 <html>
 	<head>
 		<title>Tienda Virtual</title>
+		<link rel="stylesheet" type="text/css" href="{% static "css/hojaCSS.css" %}">
 	</head>
 	<body>
 		<h1>Añadir Articulo</h1>
-		<form method="POST"> {% csrf_token %}
+		<form method="POST" enctype="multipart/form-data"> {% csrf_token %}
 			{{ form.as_p }}
 			<button type="submit">Guardar</button>
 		</form>

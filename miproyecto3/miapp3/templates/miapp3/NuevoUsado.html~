@@ -21,8 +21,7 @@
 					<td>Fecha</td>
 					<td>Precio</td>
 					<td>Tipo</td>
-					<td>Usuario</td>
-					<td>Nombre del Proveedor</td>
+					<td>Usuario</td>					
 				</tr>	<!--a continuacion un for que recorre lista_Articulo-->
 				{% for articulo in lista_articulos %}
 				<tr>
@@ -31,8 +30,7 @@
 					<td>{{ articulo.precio }}</td>
 					<td>{{ articulo.tipo }}</td>
 					<td>{{ articulo.user }}</td>
-					<td>{{ articulo.nombre_proveedor }}</td>
-					
+										
 				</tr>
 				{% endfor %}
 			</table>

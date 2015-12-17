@@ -20,4 +20,5 @@ class Articulo(models.Model):
 	precio=models.FloatField()
 	tipo=models.CharField(max_length=1, choices=TIPO_CHOICES)
 	user=models.ForeignKey(User, default=1)
+	foto = models.ImageField(upload_to='miapp3/static/fotos',null=True)
 	

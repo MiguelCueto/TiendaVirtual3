@@ -1,14 +1,17 @@
+{% load staticfiles %}
 <html>
 	<head>
 		<title>Tienda Virtual</title>
+		<link rel="stylesheet" type="text/css" href="{% static "css/hojaCSS.css" %}">
 	</head>
 	<body>
 		<h1>{{articulo.nombre}}</h1>
-			
+					
 		<ul>
 			{% if articulo.nombre_proveedor %}
+				
 				{% for var_provee in articulo.nombre_proveedor.all %}
-					
+					<li><h2>El nombre del proveedor es</h2></li>
 					<li>{{ var_provee.nombre }}</li>
 				{% endfor %}
 			{% else %}
@@ -19,6 +22,7 @@
 			
 		
 		<p>{{ articulo.fecha|date:"D d M Y - H:i" }}</p>
+		<img src="/{{articulo.foto}}">
 		<a href="{% url 'indice' %}">Volver</a>			
 	</body>
 </html>

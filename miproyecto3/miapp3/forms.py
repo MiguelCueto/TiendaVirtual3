@@ -5,4 +5,4 @@ class ArticuloForm(forms.ModelForm):
 
 	class Meta:
 		model = Articulo
-		fields = ('nombre','precio','tipo','user',)
+		fields = ('nombre','precio','tipo','foto',)

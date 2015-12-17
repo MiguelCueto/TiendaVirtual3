@@ -32,7 +32,7 @@
 				</tr>	<!--a continuacion un for que recorre lista_Articulo-->
 				{% for articulo in lista_Articulo %}
 				<tr>
-					<td><a href="{% url 'detalle_articulo' 'articulo.id' %}">{{ articulo.nombre }}</a></td>
+					<td><a href="{% url 'detalle_articulo' articulo.id %}">{{ articulo.nombre }}</a></td>
 					<td>{{ articulo.fecha }}</td>
 					<td>{{ articulo.precio }}</td>
 					<td>{{ articulo.tipo }}</td>

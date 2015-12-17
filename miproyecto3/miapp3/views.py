@@ -4,6 +4,8 @@ from django.contrib.auth.forms import UserCreationForm,AuthenticationForm #lo im
 from django.contrib.auth import login,logout,authenticate #lo importamos para que funcione el login y el logout
 from django.http import HttpResponseRedirect #esto sirve para que funcione el return return HttpResponseRedirect("/")
 from miapp3.forms import ArticuloForm
+
+from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 def indice(request):
@@ -36,16 +38,18 @@ def loginpage(request):
 	else:
 		form = AuthenticationForm()
 	return render(request,'miapp3/login.html', {'form': form,})  
-
+@login_required
 def logoutpage(request):
 	logout(request)
 	return HttpResponseRedirect("/")
 #a continuacion hacemos el añadir articulo
+@login_required
 def addarticulo(request):
 	if request.method == "POST":
-		form = ArticuloForm(request.POST)
+		form = ArticuloForm(request.POST,request.FILES)
 		if form.is_valid():
 			receta = form.save()
+			receta.user = request.user
 			receta.save()
 			return HttpResponseRedirect("/")
 	else:
