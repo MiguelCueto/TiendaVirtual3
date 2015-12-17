@@ -1,6 +1,8 @@
+{% load staticfiles %}
 <html>
 	<head>
 		<title>Articulo Usado</title>
+		<link rel="stylesheet" type="text/css" href="{% static "css/hojaCSS.css" %}">
 	</head>
 	<body>
 		{% if NuevoUsado_id == 'U' %}		
@@ -37,6 +39,8 @@
 					
 		
 		
-		<a href="{% url 'indice' %}">Volver</a>			
+		<a href="{% url 'indice' %}">Volver</a>	
+<iframe width="854" height="480" src="https://www.youtube.com/embed/3VwLjHG2LM8" frameborder="0" allowfullscreen></iframe>
+<iframe width="854" height="480" src="https://www.youtube.com/embed/3VwLjHG2LM8" frameborder="0" allowfullscreen></iframe>		
 	</body>
 </html>
