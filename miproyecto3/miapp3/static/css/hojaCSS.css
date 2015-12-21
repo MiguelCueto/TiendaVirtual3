@@ -3,5 +3,31 @@
 
 *{
 	background-color: yellow;
+	text-align: center;
+	margin: 10 auto;
+}
+
+.flotar_izq{
+
+	 float: left;
 
 }
+.flotar_dch{
+
+	float: right;
+}
+
+.over_hide{
+
+	overflow: hidden;
+
+}
+.centrar{
+	text-align: center;
+
+}
+.centrar_tabla{
+	margin: 0 auto;
+	
+}
+
